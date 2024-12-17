@@ -23,9 +23,9 @@ if amount > 0 and base_currency and target_currency:
         converted_amount = convert_currency(amount, exchange_rate)
         st.success(f"✅ Exchange Rate: {exchange_rate:.4f}")
         col1, col2, col3 = st.columns(3)
-        col1.metric(label='Base Currency', value=f'{amount} {base_currency}')
+        col1.metric(label='Base Currency', value=f'{amount:.2f} {base_currency}')
         col2.markdown("<h1 style='text-align: center; margin: 0; color: green;'>&#8594;</h1>", unsafe_allow_html=True)
-        col3.metric(label='Target Currency', value=f'{converted_amount} {target_currency}')
+        col3.metric(label='Target Currency', value=f'{converted_amount:.2f} {target_currency}')
     else:
         st.error('Error fetching exchange rate.')
 
